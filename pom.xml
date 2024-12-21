@@ -17,6 +17,9 @@
                 <configuration>
                     <source>11</source>  <!-- Use Java 11 -->
                     <target>11</target>  <!-- Use Java 11 -->
+                         <includes>
+                    <include>**/TestRunner.java</include>  <!-- Specify your Cucumber runner class -->
+                </includes>
                 </configuration>
             </plugin>
         </plugins>
