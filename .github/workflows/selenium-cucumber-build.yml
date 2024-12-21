@@ -1,0 +1,40 @@
+name: Selenium-Cucumber Automation
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # Run at 9 AM UTC
+    - cron: '0 11 * * *'  # Run at 11 AM UTC
+    - cron: '0 14 * * *'  # Run at 2 PM UTC
+  push:
+    branches:
+      - main  # Optionally trigger on push to the main branch
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest  # Using a Linux runner, adjust if you prefer Windows
+    
+    steps:
+      # Step 1: Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Install Java 23 manually (for Ubuntu environment)
+      - name: Set up Java 23
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openjdk-23-jdk
+          java -version  # Verify Java version
+
+      # Step 3: Install Maven (if not already installed)
+      - name: Install Maven
+        run: |
+          sudo apt-get install -y maven
+          mvn -version  # Verify Maven installation
+
+      # Step 4: Install project dependencies using Maven (without running tests)
+      - name: Install dependencies
+        run: mvn install -DskipTests
+
+      # Step 5: Run tests using Maven
+      - name: Run tests with Maven
+        run: mvn test
