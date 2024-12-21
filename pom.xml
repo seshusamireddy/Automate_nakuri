@@ -50,7 +50,7 @@
             <version>5.12.1</version>
         </dependency>
 
-        <!-- JUnit 4 for Cucumber integration -->
+        <!-- Cucumber JUnit Integration for Running Tests -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
@@ -58,21 +58,20 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- JUnit Platform Engine for JUnit 5 support -->
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-engine</artifactId>
-            <version>1.8.2</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- JUnit 4 Dependency for Cucumber JUnit integration -->
+        <!-- JUnit 4 for Cucumber JUnit integration -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
 
+        <!-- JUnit Platform Engine (optional, use if needed for JUnit 5 integration) -->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-engine</artifactId>
+            <version>1.8.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
