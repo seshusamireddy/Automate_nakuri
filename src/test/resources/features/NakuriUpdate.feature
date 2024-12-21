@@ -1,3 +1,4 @@
+@update_naukuri_profile
 Feature: Login and Update Profile Summary on Naukri
 
   Scenario: User logs in and updates the profile summary
